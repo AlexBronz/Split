@@ -16,7 +16,7 @@ function BottomNav({ navigation }) {
   navigation.setOptions({ headerLeft: null, headerRight: null });
   return (
     <Tab.Navigator
-      initialRouteName='Bills'
+      initialRouteName='SelectType'
       tabBarOptions={{
         showLabel: false,
         // labelStyle: null,
@@ -47,8 +47,8 @@ const options = {
     titleDisplayMode: "alwaysHide",
     tabBarIcon: () => (
       <Image
-        style={{ width: 40, height: 40 }}
-        source={require("../../assets/active-menu.png")}
+        style={{ width: 25, height: 25 }}
+        source={require("../../assets/inactive-menu.png")}
       />
     )
   },
@@ -56,7 +56,7 @@ const options = {
     tabBarIcon: () => (
       <Image
         style={{ width: 25, height: 25 }}
-        source={require("../../assets/inactive-add.png")}
+        source={require("../../assets/active-add.png")}
       />
     )
   },

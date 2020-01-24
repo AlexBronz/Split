@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
 //import { Button } from "native-base";
+import * as firebase from "firebase";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { NavigationNativeContainer } from "@react-navigation/native";
@@ -13,9 +14,22 @@ import JoinGroup from "./src/Screens/JoinGroup";
 import EnterAmount from "./src/Screens/EnterAmount";
 import BottomNav from "./src/Screens/BottomNav";
 
+var firebaseConfig = {
+  apiKey: "AIzaSyB3QKn3wWwCmbd7NccjF-DT3YhtXSHAKCE",
+  authDomain: "split-f7881.firebaseapp.com",
+  databaseURL: "https://split-f7881.firebaseio.com",
+  projectId: "split-f7881",
+  storageBucket: "split-f7881.appspot.com",
+  messagingSenderId: "725396944439",
+  appId: "1:725396944439:web:2ac3df711c9b8379c131b2",
+  measurementId: "G-H4SR5FXSL0"
+};
+
 const Stack = createStackNavigator();
 export default function App() {
-  //headerMode='none'
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+
   return (
     <NavigationNativeContainer>
       <Stack.Navigator initialRouteName='Login'>

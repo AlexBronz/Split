@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
 
 import CustomButton from "./CustomButton";
 
 const AccountPrompt = props => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const buttonPressHandler = () => {
-    props.onButtonPress();
+    props.onButtonLogin(email, password);
   };
   const forgotPasswordHandler = () => {
     if (!props.isCreateAccount) props.onForgotPassword();
@@ -33,10 +36,20 @@ const AccountPrompt = props => {
         <TextInput
           placeholder={props.isCreateAccount ? "Enter Email" : "Email"}
           style={styles.inputBox}
+          keyboardType='email-address'
+          autoCapitalize='none'
+          onChangeText={input => {
+            setEmail(input);
+          }}
         />
         <TextInput
           placeholder={props.isCreateAccount ? "Create a Password" : "Password"}
           style={styles.inputBox}
+          secureTextEntry={true}
+          autoCapitalize='none'
+          onChangeText={input => {
+            setPassword(input);
+          }}
         />
         <Text onPress={forgotPasswordHandler}>
           {props.isCreateAccount ? "" : "Forgot Password?"}

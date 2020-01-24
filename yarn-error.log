@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-navigation/core@next @react-navigation/bottom-tabs@next
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-firebase/app
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files (x86)\AOMEI Backupper;C:\Program Files\Git\cmd;C:\Program Files\1E\NomadBranch\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\ab185188\AppData\Local\Microsoft\WindowsApps;C:\Users\ab185188\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ab185188\AppData\Local\Yarn\bin;C:\Users\ab185188\AppData\Roaming\npm
+  C:\Program Files (x86)\Microsoft SDKs\TypeScript\2.5;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\bin\Roslyn;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\\MSBuild\15.0\bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files (x86)\AOMEI Backupper;C:\Program Files\Git\cmd;C:\Program Files\1E\NomadBranch\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\ab185188\AppData\Local\Microsoft\WindowsApps;C:\Users\ab185188\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ab185188\AppData\Local\Yarn\bin;C:\Users\ab185188\AppData\Roaming\npm
 
 Yarn version: 
   1.19.1
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Dev\PhoneApps\Split\node_modules\@babel\generator\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'C:\Dev\Git\Split\node_modules\@expo\xdl\binaries\windows\adb\AdbWinUsbApi.dll'
 
 npm manifest: 
   {
@@ -28,12 +28,13 @@ npm manifest:
     },
     "dependencies": {
       "@react-native-community/masked-view": "^0.1.5",
+      "@react-navigation/bottom-tabs": "^5.0.0-alpha.22",
       "@react-navigation/core": "^5.0.0-alpha.24",
       "@react-navigation/native": "^5.0.0-alpha.16",
       "@react-navigation/stack": "^5.0.0-alpha.37",
-      "expo": "^35.0.0",
-      "expo-linear-gradient": "~7.0.0",
-      "native-base": "^2.13.8",
+      "expo": "^35.0.1",
+      "expo-cli": "^3.11.7",
+      "minipass": "^2.8.5",
       "react": "16.8.3",
       "react-dom": "16.8.3",
       "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
@@ -42,7 +43,8 @@ npm manifest:
       "react-native-safe-area-context": "~0.3.6",
       "react-native-screens": "~1.0.0-alpha.23",
       "react-native-vector-icons": "^6.6.0",
-      "react-native-web": "^0.11.7"
+      "react-native-web": "^0.11.7",
+      "sharp": "^0.23.0"
     },
     "devDependencies": {
       "babel-preset-expo": "^7.1.0"

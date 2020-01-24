@@ -1,4 +1,6 @@
 import React from "react";
+import { Alert } from "react-native";
+import * as firebase from "firebase";
 
 import AccountPrompt from "../components/AccountPrompt";
 import BackgroundFrame from "../components/BackgroundFrame";
@@ -10,14 +12,25 @@ const CreateAccount = ({ navigation }) => {
     navigation.navigate("Login");
   };
 
-  const onCreateAccount = () => {
-    navigation.navigate("SendInvite");
+  const onCreateAccount = (email, password) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(
+        () => {
+          navigation.navigate("BottomNav");
+        },
+        error => {
+          Alert.alert(error.message);
+        }
+      );
+    // navigation.navigate("SendInvite");
   };
 
   return (
     <BackgroundFrame>
       <AccountPrompt
-        onButtonPress={onCreateAccount}
+        onButtonLogin={onCreateAccount}
         isCreateAccount={true}
         onCreateNewAccount={onCancel}
       />
