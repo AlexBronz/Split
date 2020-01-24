@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 //import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+//testing
 import SelectType from "./SelectType";
 import Bills from "./Bills";
 import Settings from "./Settings";
