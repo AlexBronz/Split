@@ -13,6 +13,7 @@ import SendInvite from "./src/Screens/SendInvite";
 import JoinGroup from "./src/Screens/JoinGroup";
 import EnterAmount from "./src/Screens/EnterAmount";
 import BottomNav from "./src/Screens/BottomNav";
+import ForgotPassword from "./src/Screens/ForgotPassword";
 
 var firebaseConfig = {
   apiKey: "AIzaSyB3QKn3wWwCmbd7NccjF-DT3YhtXSHAKCE",
@@ -37,6 +38,11 @@ export default function App() {
         <Stack.Screen
           name='NewAccount'
           component={CreateAccount}
+          options={options}
+        />
+        <Stack.Screen
+          name='ForgotPassword'
+          component={ForgotPassword}
           options={options}
         />
         <Stack.Screen

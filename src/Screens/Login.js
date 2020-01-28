@@ -9,15 +9,7 @@ import BackgroundFrame from "../components/BackgroundFrame";
 
 const Login = props => {
   const onForgotPassword = email => {
-    firebase
-      .auth()
-      .sendPasswordResetEmail(email)
-      .then(
-        () => {},
-        error => {
-          Alert.alert(error.message);
-        }
-      );
+    props.navigation.navigate("ForgotPassword");
     // Alert.alert("No, I did not forgot my password.");
   };
 
