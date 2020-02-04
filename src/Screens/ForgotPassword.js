@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Alert, StyleSheet, Text, View, TextInput } from "react-native";
-import * as firebase from "firebase";
+import Users from "../backend/UsersApi";
 
 import BackgroundFrame from "../components/BackgroundFrame";
 import CustomButton from "../components/CustomButton";
@@ -14,18 +14,15 @@ const ForgotPassword = ({ navigation }) => {
   };
 
   const onResetPassword = () => {
-    firebase
-      .auth()
-      .sendPasswordResetEmail(email)
-      .then(
-        () => {
-          Alert.alert("Password reset email has been sent.");
-          navigation.navigate("Login");
-        },
-        error => {
-          Alert.alert(error.message);
-        }
-      );
+    Users.sendPasswordResetEmail(email).then(
+      () => {
+        Alert.alert("Password reset email has been sent.");
+        navigation.navigate("Login");
+      },
+      error => {
+        Alert.alert(error.message);
+      }
+    );
   };
 
   return (

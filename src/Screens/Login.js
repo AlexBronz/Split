@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Alert, StyleSheet } from "react-native";
-import * as firebase from "firebase";
+import Users from "../backend/UsersApi";
 
 import AccountPrompt from "../components/AccountPrompt";
 import BackgroundFrame from "../components/BackgroundFrame";
@@ -18,19 +18,22 @@ const Login = props => {
   };
 
   const onLogin = (email, password) => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(
-        () => {
-          props.navigation.navigate("BottomNav");
-        },
-        error => {
-          Alert.alert(error.message);
-        }
-      );
+    // props.navigation.navigate("SendInvite");
+    // try {
+    //   await Users.signInWithEmailAndPassword(email, password);
+    //   props.navigation.navigate("BottomNav");
+    // } catch (error) {
+    //   Alert.alert(error.message);
+    // }
 
-    //Alert.alert("email: " + email + ", password: " + password);
+    Users.signInWithEmailAndPassword(email, password).then(
+      () => {
+        props.navigation.navigate("BottomNav");
+      },
+      error => {
+        Alert.alert(error.message);
+      }
+    );
   };
 
   props.navigation.setOptions({ headerLeft: null, headerRight: null });

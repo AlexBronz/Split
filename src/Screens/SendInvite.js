@@ -1,13 +1,39 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import HomeIconFrame from "../components/HomeIconFrame";
 import CustomButton from "../components/CustomButton";
+import * as Random from "../Utils/RandomCodeGenerator";
+import * as SMS from "expo-sms";
 
 const SendInvite = ({ navigation }) => {
   navigation.setOptions({ headerLeft: null });
 
+  const getNewCode = () => {
+    let code = Random.TextCode(3);
+    code = code.toUpperCase();
+    code = code + "-" + Random.NumCode(3);
+    return code;
+  };
+
+  const code = getNewCode();
+
+  const sendSMS = async () => {
+    //const { status } = await Expo.Permissions.askAsync(Expo.Permissions.SMS);
+    const isAvailable = await SMS.isAvailableAsync();
+    if (isAvailable) {
+      const { result } = await SMS.sendSMSAsync(
+        "",
+        `Join my SplitEven! Use my invite code ${code}. Download the app here: URL`
+      );
+      Alert.alert("Successfully sent an invite.");
+    } else {
+      Alert.alert("Opps! There is no SMS App available!");
+    }
+  };
+
   const onInvite = () => {
-    navigation.navigate("JoinGroup");
+    // navigation.navigate("JoinGroup");
+    sendSMS();
   };
   return (
     <HomeIconFrame
@@ -17,7 +43,7 @@ const SendInvite = ({ navigation }) => {
     >
       <View style={styles.container}>
         <View style={styles.codeContainer}>
-          <Text style={styles.code}>XFG-456</Text>
+          <Text style={styles.code}>{code}</Text>
         </View>
         <View style={styles.instructionContainer}>
           <Text style={styles.instruction}>
