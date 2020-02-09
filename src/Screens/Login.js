@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Alert, StyleSheet } from "react-native";
-import Users from "../backend/UsersApi";
+import backend from "../backend/BackendAPIs";
 
 import AccountPrompt from "../components/AccountPrompt";
 import BackgroundFrame from "../components/BackgroundFrame";
@@ -18,15 +18,7 @@ const Login = props => {
   };
 
   const onLogin = (email, password) => {
-    // props.navigation.navigate("SendInvite");
-    // try {
-    //   await Users.signInWithEmailAndPassword(email, password);
-    //   props.navigation.navigate("BottomNav");
-    // } catch (error) {
-    //   Alert.alert(error.message);
-    // }
-
-    Users.signInWithEmailAndPassword(email, password).then(
+    backend.user.login(email, password).then(
       () => {
         props.navigation.navigate("BottomNav");
       },

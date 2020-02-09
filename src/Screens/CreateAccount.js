@@ -1,5 +1,6 @@
 import React from "react";
-import Users from '../backend/UsersApi'
+import backend from "../backend/BackendAPIs";
+import { Alert } from "react-native";
 
 import AccountPrompt from "../components/AccountPrompt";
 import BackgroundFrame from "../components/BackgroundFrame";
@@ -12,12 +13,14 @@ const CreateAccount = ({ navigation }) => {
   };
 
   const onCreateAccount = async (email, password) => {
-    try {
-      await Users.createUserWithEmailAndPassword(email, password);
-      navigation.navigate("BottomNav");
-    } catch (error) {
-      Alert.alert(error.message);
-    }
+    backend.user.createNewAccount(email, password).then(
+      () => {
+        navigation.navigate("BottomNav");
+      },
+      error => {
+        Alert.alert(error.message);
+      }
+    );
   };
 
   return (

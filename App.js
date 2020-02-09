@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  YellowBox
+} from "react-native";
+import _ from "lodash";
 //import { Button } from "native-base";
 //import * as firebase from "firebase";
 
@@ -14,13 +21,20 @@ import JoinGroup from "./src/Screens/JoinGroup";
 import EnterAmount from "./src/Screens/EnterAmount";
 import BottomNav from "./src/Screens/BottomNav";
 import ForgotPassword from "./src/Screens/ForgotPassword";
-import Users from "./src/backend/UsersApi";
+import backend from "./src/backend/BackendAPIs";
 
 const Stack = createStackNavigator();
 export default function App() {
-  Users.initialize();
-  //firebase.analytics();
+  YellowBox.ignoreWarnings(["Setting a timer"]);
+  const _console = _.clone(console);
+  console.warn = message => {
+    if (message.indexOf("Setting a timer") <= -1) {
+      _console.warn(message);
+    }
+  };
 
+  backend.initialize();
+  backend.db.set("accounts", { Alex: "Me" });
   return (
     <NavigationNativeContainer>
       <Stack.Navigator initialRouteName='Login'>
