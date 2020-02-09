@@ -1,26 +1,24 @@
 {
   "accounts": {
-    "Alex": {
-      "bills": {
-        "water": {
-          "code": "GFX-431",
-          "members": {
-            "userName1": true,
-            "userName2": true,
-            "userName3": false
-          },
-          "notifications": {
-            "notification1": "",
-            "notification2": ""
-          }
+    "bills": {
+      "water": {
+        "code": "GFX-431",
+        "members": {
+          "userName1": true,
+          "userName2": false,
+          "userName3": false
         },
-        "electric": {
-          "code": "GFX-434",
-          "members": {
-            "userName1": true,
-            "userName2": true,
-            "userName3": false
-          }
+        "notifications": {
+          "notification1": "",
+          "notification2": ""
+        }
+      },
+      "electric": {
+        "code": "GFX-434",
+        "members": {
+          "userName1": true,
+          "userName2": true,
+          "userName3": false
         }
       }
     },
@@ -42,7 +40,7 @@
     "name": "Alex",
     "email": "",
     "phone": "",
-    "paymentAcounts": {
+    "payments": {
       "paypal": "",
       "Vennmo": ""
     }

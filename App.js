@@ -7,8 +7,6 @@ import {
   YellowBox
 } from "react-native";
 import _ from "lodash";
-//import { Button } from "native-base";
-//import * as firebase from "firebase";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { NavigationNativeContainer } from "@react-navigation/native";
@@ -34,7 +32,7 @@ export default function App() {
   };
 
   backend.initialize();
-  backend.db.set("accounts", { Alex: "Me" });
+  //backend.db.set("accounts", { Alex: "Me" });
   return (
     <NavigationNativeContainer>
       <Stack.Navigator initialRouteName='Login'>
